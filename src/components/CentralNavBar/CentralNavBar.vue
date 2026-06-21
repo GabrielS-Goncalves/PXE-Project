@@ -1,5 +1,6 @@
 <script setup>
     import { useSidebarStore } from '@/stores/navbar/useSidebarStore';
+import CentralUserDropdown from './CentralUserDropdown.vue';
 
     const sidebarStore = useSidebarStore();
     function toggleMenu(){
@@ -26,7 +27,7 @@
             </div>
         </div>
         <div class="Right-side">
-
+            <CentralUserDropdown/>
         </div>
     </nav>
 </template>
@@ -55,7 +56,7 @@
     }
 
     .Menu-button{
-        width: 60px;
+        width: 120px;
     }
 
     .Central-side{
@@ -68,9 +69,9 @@
     .Search-wrapper{
         display: flex;
         align-items: center;
-        max-width: 400px;
+        max-width: 800px;
         width: 100%;
-        border-radius: 4px;
+        border-radius: 40px;
         overflow: hidden;
     }
 
@@ -80,7 +81,7 @@
 
     .Search-input {
         flex-grow: 1;
-        padding: 8px 15px;
+        padding: 8px 180px;
         border: none;
         outline: none;
         font-size: 14px;
@@ -98,7 +99,6 @@
         background-color: #222838;
         color: aliceblue;
         border: none;
-        border-left: 1px solid aliceblue;
         padding: 8px 12px;
         cursor: pointer;
         font-size: 14px;
@@ -128,5 +128,9 @@
 
     .Main-button:hover{
         opacity: 0.6;
+    }
+
+    .App-logo{
+
     }
 </style>
