@@ -1,26 +1,26 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useSidebarStore = defineStore('sideBar', () => {
+export const useVerticalBarStore = defineStore('verticalBar', () => {
 
-    // Definição para que a sidebar começe aberta.
+    // Definição para que a VerticalBar começe aberta.
     const isOpen = ref(true);
 
     // Função para alternar o estado aberto/fechado.
-    function toggleSidebar() {
+    function toggleVerticalBar() {
         isOpen.value = !isOpen.value;
     }
 
     // Função para forçar a abertura.
-    function openSidebar() {
+    function openVerticalBar() {
         isOpen.value = true;
     }
 
     // Função para forçar o fechamento.
-    function closeSidebar() {
+    function closeVerticalBar() {
         isOpen.value = false;
     }
 
     // O store retorna o estado e as ações.
-    return {isOpen, toggleSidebar, openSidebar, closeSidebar};
+    return {isOpen, toggleVerticalBar, openVerticalBar, closeVerticalBar};
 })

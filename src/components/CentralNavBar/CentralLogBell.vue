@@ -41,7 +41,7 @@
 
 <template>
     <div class="Central-UserDropdown" ref="DropdownRef">
-        <button @click="toggleUserMenu" class="User-button">👤</button>
+        <button @click="toggleUserMenu" class="User-button">🔔</button>
         <div v-if="UserMenuIsOpen" class="User-dropdown">
             <div class="Dropdown-header">
                 PXE Project
@@ -63,7 +63,6 @@
 <style scoped>
     .Central-UserDropdown{
         position: relative;
-        padding-left: 330px;
     }
 
     .User-button{

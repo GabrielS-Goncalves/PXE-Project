@@ -1,15 +1,16 @@
 <script setup>
-    import { useSidebarStore } from '@/stores/navbar/useSidebarStore';
-import CentralUserDropdown from './CentralUserDropdown.vue';
+    import { useVerticalBarStore } from '@/stores/navbar/useVerticalBarStore.js';
+    import CentralUserDropdown from './CentralUserDropdown.vue';
 
-    const sidebarStore = useSidebarStore();
+    const verticalBarStore = useVerticalBarStore();
     function toggleMenu(){
-        sidebarStore.toggleSidebar();
+        verticalBarStore.toggleVerticalBar();
     }
 </script>
 
 <template>
     <nav class="Central-navbar">
+        <!-- Divisão para Barra Vertical -->
         <div class="Left-side">
             <div class="Menu-button">
                 <button @click="toggleMenu" class="Main-button">
@@ -20,12 +21,16 @@ import CentralUserDropdown from './CentralUserDropdown.vue';
                 <span class="Main-logo">PXE Project</span>
             </div>
         </div>
+
+        <!-- Divisão para barra de pesquisa -->
         <div class="Central-side">
             <div class="Search-wrapper">
                 <input type="text" class="Search-input" v-model="searchTerm" placeholder="Search..." @keyup.enter="search">
                 <button @click="search" class="Search-button">🔍</button>
             </div>
         </div>
+
+        <!-- Divisão para menu de usuário -->
         <div class="Right-side">
             <CentralUserDropdown/>
         </div>
@@ -81,10 +86,11 @@ import CentralUserDropdown from './CentralUserDropdown.vue';
 
     .Search-input {
         flex-grow: 1;
-        padding: 8px 180px;
+        padding: 8px 15px;
         border: none;
         outline: none;
         font-size: 14px;
+        width: 30cm;
         background-color: #222838;
         color: aliceblue;
         height: 34px;
@@ -128,9 +134,5 @@ import CentralUserDropdown from './CentralUserDropdown.vue';
 
     .Main-button:hover{
         opacity: 0.6;
-    }
-
-    .App-logo{
-
     }
 </style>
