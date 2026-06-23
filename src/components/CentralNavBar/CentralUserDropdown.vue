@@ -119,6 +119,7 @@
         background: none;
         border: none;
         color: aliceblue;
+        transition: background-color 0.2s;
     }
 
     .Dropdown-item:hover{

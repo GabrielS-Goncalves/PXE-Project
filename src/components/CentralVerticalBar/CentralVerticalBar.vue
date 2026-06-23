@@ -18,6 +18,13 @@
             ]
         },
         {
+            name: 'Inventory',
+            icon: '📚​',
+            children: [
+                {name: 'Computers', icon: '💻', to: '/inventory/computers'}
+            ]
+        },
+        {
             name: 'Administration',
             icon: '⚙️',
             to: '/administration'
@@ -103,20 +110,13 @@
         width: 250px;
     }
 
-    .VerticalBar:not(.Is-open) .Menu-item:hover::after{
-        opacity: 1;
-    }
-
-    .VerticalBar:not(.Is-open) .Menu-item:hover{
-        background-color: #4bc078;
-    }
-
+    
     .Menu-list{
         list-style: none;
         padding: 0;
         margin-top: 0px;
     }
-
+    
     .Menu-item{
         display: flex;
         align-items: center;
@@ -127,16 +127,16 @@
         white-space: nowrap;
         transition: background-color 0.2s;
     }
-
+    
     .Menu-item:hover{
-        background-color: #34495e;
+        background-color: #ae3440;
     }
-
+    
     .Menu-item.RouterLink-active{
         background-color: #0d7233;
         font-weight: bold;
     }
-
+    
     .Menu-item::after{
         z-index: 1100;
         content: attr(data-tooltip);
@@ -146,7 +146,7 @@
         transform: translateY(-50%);
         white-space: nowrap;
         padding: 6px 10px;
-        background-color: darkblue;
+        background-color: #f5495a;
         color: aliceblue;
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -155,6 +155,14 @@
         transition: opacity 0.2s ease;
     }
 
+    .VerticalBar:not(.Is-open) .Menu-item:hover::after{
+        opacity: 1;
+    }
+
+    .VerticalBar:not(.Is-open) .Menu-item:hover{
+        background-color: #ae3440;
+    }
+    
     .Menu-itemGroup{
         width: 100%;
     }
@@ -175,7 +183,7 @@
     }
 
     .Submenu-toggle:hover{
-        background-color: #3f556b;
+        background-color: #ae3440;
     }
 
     .Chevron{
@@ -200,8 +208,8 @@
         display: flex;
         align-items: center;
         padding-left: 40px !important;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         font-size: 0.9em;
     }
 
