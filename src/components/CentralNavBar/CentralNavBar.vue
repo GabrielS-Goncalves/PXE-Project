@@ -42,7 +42,7 @@
         position: fixed;
         width: 100%;
         height: 50px;
-        background-color: #F5495A;
+        background-color: #7f67e7;  /*#F5495A  #161342 #df8e64 #925dca*/
         color: aliceblue;
         display: flex;
         align-items: center;
