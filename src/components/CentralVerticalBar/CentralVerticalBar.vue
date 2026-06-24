@@ -129,7 +129,7 @@
     }
     
     .Menu-item:hover{
-        background-color: #ae3440;
+        background-color: #806ed3;
     }
     
     .Menu-item.RouterLink-active{
@@ -146,7 +146,7 @@
         transform: translateY(-50%);
         white-space: nowrap;
         padding: 6px 10px;
-        background-color: #f5495a;
+        background-color: #7f67e7;
         color: aliceblue;
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -160,7 +160,7 @@
     }
 
     .VerticalBar:not(.Is-open) .Menu-item:hover{
-        background-color: #ae3440;
+        background-color: #806ed3;
     }
     
     .Menu-itemGroup{
@@ -183,7 +183,7 @@
     }
 
     .Submenu-toggle:hover{
-        background-color: #ae3440;
+        background-color: #806ed3;
     }
 
     .Chevron{
