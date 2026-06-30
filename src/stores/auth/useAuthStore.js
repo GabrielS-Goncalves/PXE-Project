@@ -7,10 +7,14 @@ export const useAuthStore = defineStore('auth', () => {
     const isAuthenticated = computed(() => !!token.value);
 
     function login(userData, userToken) {
-        token.value = userToken
-        userData.value = userData
-        localStorage.setItem('token', userToken)
-        localStorage.setItem('user', JSON.stringify(userData))
+        const UserAdmin = import.meta.env.VITE_USER
+        const UserPassword = import.meta.env.VITE_PASSWORD
+        if (UserAdmin === userData && UserPassword === userToken){
+            token.value = userToken
+            userData.value = userData
+            localStorage.setItem('token', userToken)
+            localStorage.setItem('user', JSON.stringify(userData))
+        }
     }
 
     function logout() {
