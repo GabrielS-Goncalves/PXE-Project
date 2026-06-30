@@ -3,19 +3,21 @@
   import CentralNavBar from './components/CentralNavBar/CentralNavBar.vue';
   import CentralVerticalBar from './components/CentralVerticalBar/CentralVerticalBar.vue';
   import { useVerticalBarStore } from '@/stores/navbar/useVerticalBarStore.js';
+  import { useAuthStore } from './stores/auth/useAuthStore.js';
 
   const verticalBarStore = useVerticalBarStore()
+  const authStore = useAuthStore()
 </script>
 
 <template>
-  <div id="App-container">
+  <div id="App-container" v-if="authStore.isAuthenticated">
     <CentralNavBar/>
     <CentralVerticalBar/>
 
-    <main :class="['Main-content', {'VerticalBar-active': verticalBarStore.isOpen}]">
-      <RouterView/>
-    </main>
   </div>
+  <main :class="['Main-content', {'VerticalBar-active': verticalBarStore.isOpen}]">
+    <RouterView/>
+  </main>
 </template>
 
 <style>

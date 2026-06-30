@@ -1,6 +1,8 @@
 <script setup>
     import { ref, onMounted, onUnmounted } from 'vue';
+    import { useRouter } from 'vue-router';
 
+    const router = useRouter();
     const appVersion = import.meta.env.VITE_APP_VERSION;
     const appBuildDate = import.meta.env.VITE_APP_BUILD_DATE;
 
@@ -32,9 +34,10 @@
         document.removeEventListener('click', handleClickOutside);
     });
 
-    function exitApp() {
-        console.log('Ação - Exit');
-        // UserMenuIsOpen.value = false;
+    function handleLogout() {
+        localStorage.removeItem('token');
+        router.push('/auth/login')
+        UserMenuIsOpen.value = false;
     };
 
 </script>
@@ -55,7 +58,7 @@
                 </p>
             </div>
             <hr class="Dropdown-divider">
-            <button @click="exitApp" class="Dropdown-item Exit-button">Exit</button>
+            <button @click="handleLogout" class="Dropdown-item Exit-button">Exit</button>
         </div>
     </div>
 </template>

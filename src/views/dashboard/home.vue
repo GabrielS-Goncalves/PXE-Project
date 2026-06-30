@@ -1,8 +1,13 @@
 <script>
+    import DashboardLinkBar from '@/components/Dashboard/DashboardLinkBar.vue';
+
 </script>
 
 <template>
-    <h1>Welcome!</h1>
+    <div>
+        <DashboardLinkBar/>
+    </div>
+    <h1>Welcome Gabriel!</h1>
 </template>
 
 <style>

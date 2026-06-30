@@ -27,7 +27,9 @@
         {
             name: 'Administration',
             icon: '⚙️',
-            to: '/administration'
+            children: [
+                {name: 'Logs', icon: '🧾', to: '/administration/logs'}
+            ]
         }
     ]);
 
@@ -129,7 +131,7 @@
     }
     
     .Menu-item:hover{
-        background-color: #806ed3;
+        background-color: #c561157e;
     }
     
     .Menu-item.RouterLink-active{
@@ -146,7 +148,7 @@
         transform: translateY(-50%);
         white-space: nowrap;
         padding: 6px 10px;
-        background-color: #7f67e7;
+        background-color: #c56215;
         color: aliceblue;
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -160,7 +162,7 @@
     }
 
     .VerticalBar:not(.Is-open) .Menu-item:hover{
-        background-color: #806ed3;
+        background-color: #c561157e;
     }
     
     .Menu-itemGroup{
@@ -183,7 +185,7 @@
     }
 
     .Submenu-toggle:hover{
-        background-color: #806ed3;
+        background-color: #c561157e;
     }
 
     .Chevron{
