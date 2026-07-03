@@ -35,8 +35,8 @@
     });
 
     function handleLogout() {
+        router.push('/auth/login');
         localStorage.removeItem('token');
-        router.push('/auth/login')
         UserMenuIsOpen.value = false;
     };
 

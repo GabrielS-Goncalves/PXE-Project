@@ -6,14 +6,14 @@
     const authStore = useAuthStore();
     const router = useRouter();
 
-    const userName = ref('')
-    const passWord = ref('')
+    const username = ref('')
+    const password = ref('')
     const errorMessage = ref('')
 
     async function handleLogin() {
         errorMessage.value = '';
 
-        const success = await authStore.login(userName.value, passWord.value);
+        const success = await authStore.login(username.value, password.value);
 
         if(success){
             router.push('/dashboard/home');
@@ -30,11 +30,11 @@
             <form @submit.prevent="handleLogin">
                 <div class="input-Group">
                     <label>Usuário</label>
-                    <input type="text" v-model="userName" required placeholder="Type your username">
+                    <input type="text" v-model="username" required placeholder="Type your username">
                 </div>
                 <div class="input-Group">
                     <label>Senha</label>
-                    <input type="password" v-model="passWord" required placeholder="Type your password">
+                    <input type="password" v-model="password" required placeholder="Type your password">
                 </div>
                 <p v-if="errorMessage">{{ errorMessage }}</p>
                 <button type="submit" class="btn-Login">Login</button>
@@ -50,7 +50,7 @@
         align-items: center;
         height: 100vh;
         width: 100vw;
-        background-color: #222838;
+        background-image: url('/images/background/wallpaper.png');
         position: fixed;
         top: 0;
         left: 0;
@@ -97,6 +97,10 @@
 
     input:hover{
         border: 2px solid aliceblue;
+    }
+
+    p{
+        color: brown;
     }
 
     .btn-Login{
