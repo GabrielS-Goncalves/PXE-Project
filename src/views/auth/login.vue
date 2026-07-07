@@ -26,14 +26,17 @@
 <template>
     <div class="login-Container">
         <div class="login-Card">
+            <figure class="login-Logo">
+                <img src="/images/logo/rocket.png" alt="Image Deployer Logo">
+            </figure>
             <h2>Image Deployer</h2>
             <form @submit.prevent="handleLogin">
                 <div class="input-Group">
-                    <label>Usuário</label>
+                    <label>User</label>
                     <input type="text" v-model="username" required placeholder="Type your username">
                 </div>
                 <div class="input-Group">
-                    <label>Senha</label>
+                    <label>Password</label>
                     <input type="password" v-model="password" required placeholder="Type your password">
                 </div>
                 <p v-if="errorMessage">{{ errorMessage }}</p>
@@ -65,6 +68,12 @@
         width: 100%;
         max-width: 400px;
         border: 1px solid aliceblue;
+    }
+
+    .login-Logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     h2{
